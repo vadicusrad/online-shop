@@ -1,0 +1,12 @@
+.About {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.About p {
+  margin-top: 0;
+}
