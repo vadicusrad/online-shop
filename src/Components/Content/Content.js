@@ -4,7 +4,12 @@ import Aside from "../Aside/Asaide";
 import ContentItems from "../ContentItems/ContentItems";
 import { useState } from "react";
 
-function Content({ cartItems, setCartItems }) {
+function Content({
+	cartItems,
+	setCartItems,
+	burgerNavState,
+	burgerStateToggle,
+}) {
 	const [currentCategory, setCurrentCategory] = useState("");
 	const [modalActive, setModalActive] = useState(false);
 	const [modalContent, setModalContent] = useState([]);
@@ -36,7 +41,11 @@ function Content({ cartItems, setCartItems }) {
 
 	return (
 		<div className="Content">
-			<Aside setCurrentCategory={setCurrentCategory} />
+			<Aside
+				burgerStateToggle={burgerStateToggle}
+				burgerNavState={burgerNavState}
+				setCurrentCategory={setCurrentCategory}
+			/>
 
 			<ContentItems
 				setModalContent={setModalContent}

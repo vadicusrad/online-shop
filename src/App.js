@@ -8,19 +8,32 @@ import BaseLayout from "./Components/BaseLayout/BaseLayout";
 
 function App() {
 	const [cartItems, setCartItems] = useState([]);
+	const [burgerNavState, setBurgerNavState] = useState(false);
 
+	const burgerStateToggle = () => {
+		setBurgerNavState(!burgerNavState);
+	};
+
+	console.log(burgerNavState);
 	const itemsCount = cartItems.length;
 	return (
 		<div className="App">
 			<Routes>
 				<Route
 					path={"/"}
-					element={<BaseLayout itemsCount={itemsCount} />}
+					element={
+						<BaseLayout
+							burgerStateToggle={burgerStateToggle}
+							itemsCount={itemsCount}
+						/>
+					}
 				>
 					<Route
 						index
 						element={
 							<Content
+								burgerStateToggle={burgerStateToggle}
+								burgerNavState={burgerNavState}
 								setCartItems={setCartItems}
 								cartItems={cartItems}
 							/>

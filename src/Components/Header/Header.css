@@ -1,24 +1,76 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 40px;
-  height: 60px;
-  background-color: #1d1c1bda;
-  color: rgb(197, 197, 197);
-  position: sticky;
-  top: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 40px;
+	height: 60px;
+	background-color: #1d1c1bea;
+	color: rgb(197, 197, 197);
+	position: sticky;
+	top: 0;
+	z-index: 10;
 }
 .header-brand {
-  text-decoration: none;
+	text-decoration: none;
 }
 .header-brand h1 {
-  color: rgb(252, 252, 252);
-  text-decoration: none;
-  font-size: 30px;
+	color: rgb(252, 252, 252);
+	text-decoration: none;
+	font-size: 30px;
 }
 .header-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.header-burger {
+	width: 30px;
+	height: 30px;
+	position: relative;
+	cursor: pointer;
+	display: none;
+}
+
+.header-burger:after {
+	content: "";
+	width: 30px;
+	background-color: white;
+	position: absolute;
+	height: 4px;
+	bottom: 0;
+}
+
+.header-burger:before {
+	content: "";
+	width: 30px;
+	background-color: white;
+	position: absolute;
+	height: 4px;
+	top: 0;
+}
+
+.header-burger span {
+	position: absolute;
+	width: 30px;
+	background-color: white;
+	height: 4px;
+	top: 13px;
+}
+.header-cartIcon {
+	display: flex;
+	align-items: center;
+	padding-right: 15px;
+}
+
+.header-wrapper {
+	display: flex;
+}
+
+@media screen and (max-width: 768px) {
+	.header-nav {
+		display: none;
+	}
+	.header-burger {
+		display: block;
+	}
 }
