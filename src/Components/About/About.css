@@ -5,16 +5,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 25px;
+  margin: 0 auto;
 }
 
 .About p {
   margin-top: 0;
+  text-align: center;
 }
 
 @media screen and (max-width: 900px) {
   .About {
     width: 100%;
-    padding: 10px;
   }
 }
