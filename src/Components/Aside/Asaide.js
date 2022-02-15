@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Aside.css';
 import CategoriesItem from './CategoriesItem/CategoriesItem';
-import About from '../About/About';
 import { Link } from 'react-router-dom';
 
 function Aside({ setCurrentCategory, burgerNavState, burgerStateToggle }) {
