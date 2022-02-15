@@ -22,6 +22,7 @@ function App() {
 					path={"/"}
 					element={
 						<BaseLayout
+							burgerNavState={burgerNavState}
 							burgerStateToggle={burgerStateToggle}
 							itemsCount={itemsCount}
 						/>

@@ -38,6 +38,7 @@
 	position: absolute;
 	height: 4px;
 	bottom: 0;
+	transition: all 0.2s;
 }
 
 .header-burger:before {
@@ -47,6 +48,7 @@
 	position: absolute;
 	height: 4px;
 	top: 0;
+	transition: all 0.2s;
 }
 
 .header-burger span {
@@ -56,6 +58,22 @@
 	height: 4px;
 	top: 13px;
 }
+
+.closedBurgerIcon span {
+	display: none;
+}
+
+.closedBurgerIcon::before {
+	transform: rotate(45deg);
+	top: 13px;
+	width: 35px;
+}
+.closedBurgerIcon::after {
+	transform: rotate(-45deg);
+	top: 13px;
+	width: 35px;
+}
+
 .header-cartIcon {
 	display: flex;
 	align-items: center;

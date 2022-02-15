@@ -5,7 +5,7 @@ import Cart from "../Cart/Cart";
 import CartLogo from "../../static/CartLogo";
 import { Link } from "react-router-dom";
 
-function Header({ itemsCount, burgerStateToggle }) {
+function Header({ itemsCount, burgerStateToggle, burgerNavState }) {
 	return (
 		<header className="header">
 			<Link className="header-brand" to="/">
@@ -29,7 +29,11 @@ function Header({ itemsCount, burgerStateToggle }) {
 					onClick={() => {
 						burgerStateToggle();
 					}}
-					className="header-burger"
+					className={
+						burgerNavState
+							? "header-burger closedBurgerIcon"
+							: "header-burger"
+					}
 				>
 					<span></span>
 				</div>
