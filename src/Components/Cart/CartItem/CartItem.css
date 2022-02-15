@@ -1,158 +1,158 @@
 .Cart-item {
-	display: flex;
-	flex-direction: column;
-	width: 900px;
-	height: 150px;
-	align-items: center;
-	justify-content: space-between;
-	border-bottom: rgba(0, 0, 0, 0.522) solid 1px;
-	padding: 10px;
-	box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 900px;
+  height: 150px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: rgba(0, 0, 0, 0.522) solid 1px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 .Cart-item-wrapper {
-	display: flex;
-	justify-content: center;
-	width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .Cart-item_img {
-	height: 100px;
-	overflow: hidden;
-	padding: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  height: 100px;
+  overflow: hidden;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Cart-item_img img {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .Cart-item_title {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	height: 100px;
-	overflow: hidden;
-	min-width: 40%;
-	padding: 10px;
-	font-size: 25px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100px;
+  overflow: hidden;
+  min-width: 40%;
+  padding: 10px;
+  font-size: 25px;
 }
 .Cart-item_title h6 {
-	margin: 0;
+  margin: 0;
 }
 
 .Cart-item_price {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	height: 100px;
-	min-width: 10%;
-	padding-left: 30px;
-	padding-right: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100px;
+  min-width: 10%;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .Cart-item_btn {
-	height: 100px;
-	width: 10%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  height: 100px;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Cart-item_btn button {
-	margin-left: 10px;
-	background-color: rgb(193, 196, 211);
-	border: none;
-	width: 25px;
-	height: 20px;
+  margin-left: 10px;
+  background-color: rgb(193, 196, 211);
+  border: none;
+  width: 25px;
+  height: 20px;
 }
 
 .Cart-item_count {
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	align-items: top;
-	height: 100px;
-	width: 5%;
-	padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: top;
+  height: 100px;
+  width: 5%;
+  padding: 10px;
 }
 .Cart-item_count p {
-	margin: 0;
+  margin: 0;
 }
 
 .Cart-message {
-	text-align: center;
-	font-size: 20px;
-	margin-bottom: 20px;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
 .grey {
-	background-color: rgb(212, 212, 212);
+  background-color: rgb(212, 212, 212);
 }
 
 @media screen and (max-width: 768px) {
-	.Cart-item {
-		width: 100%;
-	}
+  .Cart-item {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
-	.Cart-item {
-		height: 220px;
-	}
-	.Cart-item-wrapper {
-		display: flex;
-		justify-content: space-between;
-	}
+  .Cart-item {
+    height: 220px;
+  }
+  .Cart-item-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
 
-	.Cart-index {
-		display: none;
-	}
+  .Cart-index {
+    display: none;
+  }
 
-	.Cart-item_title {
-		margin: 0;
-	}
+  .Cart-item_title {
+    margin: 0;
+  }
 
-	.Cart-item_count p {
-		margin: 0;
-	}
+  .Cart-item_count p {
+    margin: 0;
+  }
 
-	.Cart-item_count {
-		height: 100px;
-		padding: 0;
-		align-items: center;
-	}
+  .Cart-item_count {
+    height: 100px;
+    padding: 0;
+    align-items: center;
+  }
 
-	.Cart-item_title h6 {
-		text-align: center;
-		margin: 0;
-		height: 40px;
-		margin-bottom: 10px;
-	}
+  .Cart-item_title h6 {
+    text-align: center;
+    margin: 0;
+    height: 40px;
+    margin-bottom: 10px;
+  }
 
-	.Cart-item_title {
-		padding: 0;
-		height: 80px;
-	}
+  .Cart-item_title {
+    padding: 0;
+    height: 80px;
+  }
 
-	.Cart-item_price {
-		padding: 0;
-	}
+  .Cart-item_price {
+    padding: 0;
+  }
 
-	.Cart-item_btn {
-		flex-direction: column;
-		justify-content: space-around;
+  .Cart-item_btn {
+    flex-direction: column;
+    justify-content: space-around;
 
-		margin-right: 10px;
-	}
+    margin-right: 10px;
+  }
 
-	.Cart-item_btn button {
-		margin: 0;
-		padding: 0;
-		width: 30px;
-		height: 30px;
-	}
+  .Cart-item_btn button {
+    margin: 0;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+  }
 }

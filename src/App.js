@@ -7,52 +7,47 @@ import About from './Components/About/About';
 import BaseLayout from './Components/BaseLayout/BaseLayout';
 
 function App() {
-	const [cartItems, setCartItems] = useState([]);
-	const [burgerNavState, setBurgerNavState] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
+  const [burgerNavState, setBurgerNavState] = useState(false);
 
-	const burgerStateToggle = () => {
-		setBurgerNavState(!burgerNavState);
-	};
+  const burgerStateToggle = () => {
+    setBurgerNavState(!burgerNavState);
+  };
 
-	const itemsCount = cartItems.length;
-	return (
-		<div className='App'>
-			<Routes>
-				<Route
-					path={'/'}
-					element={
-						<BaseLayout
-							burgerNavState={burgerNavState}
-							burgerStateToggle={burgerStateToggle}
-							itemsCount={itemsCount}
-						/>
-					}
-				>
-					<Route
-						index
-						element={
-							<Content
-								burgerStateToggle={burgerStateToggle}
-								burgerNavState={burgerNavState}
-								setCartItems={setCartItems}
-								cartItems={cartItems}
-							/>
-						}
-					/>
-					<Route
-						path={'cart'}
-						element={
-							<Cart
-								setCartItems={setCartItems}
-								cartItems={cartItems}
-							/>
-						}
-					/>
-					<Route path={'about'} element={<About />} />
-				</Route>
-			</Routes>
-		</div>
-	);
+  const itemsCount = cartItems.length;
+  return (
+    <div className='App'>
+      <Routes>
+        <Route
+          path={'/'}
+          element={
+            <BaseLayout
+              burgerNavState={burgerNavState}
+              burgerStateToggle={burgerStateToggle}
+              itemsCount={itemsCount}
+            />
+          }
+        >
+          <Route
+            index
+            element={
+              <Content
+                burgerStateToggle={burgerStateToggle}
+                burgerNavState={burgerNavState}
+                setCartItems={setCartItems}
+                cartItems={cartItems}
+              />
+            }
+          />
+          <Route
+            path={'cart'}
+            element={<Cart setCartItems={setCartItems} cartItems={cartItems} />}
+          />
+          <Route path={'about'} element={<About />} />
+        </Route>
+      </Routes>
+    </div>
+  );
 }
 
 export default App;

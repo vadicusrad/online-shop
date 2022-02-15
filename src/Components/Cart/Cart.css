@@ -1,66 +1,66 @@
 .Cart {
-	width: 900px;
-	min-height: 80vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	overflow-y: auto;
-	margin: 0 auto;
+  width: 900px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  margin: 0 auto;
 }
 
 .Cart-title {
-	text-align: center;
+  text-align: center;
 }
 
 .Cart-message {
-	text-align: center;
+  text-align: center;
 
-	padding-bottom: 30px;
+  padding-bottom: 30px;
 }
 
 .Cart-index {
-	padding: 10px;
+  padding: 10px;
 }
 
 .Cart-sum {
-	display: flex;
-	height: 100px;
-	align-items: center;
-	justify-content: flex-end;
-	padding: 10px 40px 10px 10px;
-	margin-bottom: 10px;
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px 40px 10px 10px;
+  margin-bottom: 10px;
 }
 
 .Cart-sum_btn {
-	padding-left: 30px;
+  padding-left: 30px;
 }
 
 .Cart-sum_btn button {
-	background-color: rgb(60, 214, 40);
+  background-color: rgb(60, 214, 40);
 
-	height: 30px;
-	border: none;
-	color: white;
-	font-size: 1rem;
-	cursor: pointer;
-	transition: all 0.4s;
+  height: 30px;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s;
 }
 
 .Cart-backButton {
-	background-color: rgb(40, 72, 214);
-	width: 150px;
-	height: 30px;
-	border: none;
-	color: white;
-	font-size: 1rem;
-	cursor: pointer;
-	transition: all 0.4s;
-	margin-bottom: 15px;
+  background-color: rgb(40, 72, 214);
+  width: 150px;
+  height: 30px;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s;
+  margin-bottom: 15px;
 }
 
 @media screen and (max-width: 900px) {
-	.Cart {
-		width: 100%;
-	}
+  .Cart {
+    width: 100%;
+  }
 }
