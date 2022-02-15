@@ -19,7 +19,8 @@
 
 @media screen and (max-width: 768px) {
 	.Content-filters {
-		position: absolute;
+		position: fixed;
+		top: 100;
 		left: -110%;
 		width: 300px;
 		height: 100%;
