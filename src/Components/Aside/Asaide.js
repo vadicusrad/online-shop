@@ -30,7 +30,10 @@ function Aside({ setCurrentCategory, burgerNavState, burgerStateToggle }) {
 				<h3>Categories</h3>
 				<ul id="Categories-list">
 					<li
-						onClick={() => setCurrentCategory("")}
+						onClick={() => {
+							setCurrentCategory("");
+							burgerStateToggle();
+						}}
 						className="Category-list-item"
 					>
 						all

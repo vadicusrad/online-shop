@@ -14,7 +14,6 @@ function App() {
 		setBurgerNavState(!burgerNavState);
 	};
 
-	console.log(burgerNavState);
 	const itemsCount = cartItems.length;
 	return (
 		<div className="App">
