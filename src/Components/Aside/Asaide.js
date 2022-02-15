@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Aside.css';
 import CategoriesItem from './CategoriesItem/CategoriesItem';
+import About from '../About/About';
+import { Link } from 'react-router-dom';
 
 function Aside({ setCurrentCategory, burgerNavState, burgerStateToggle }) {
   const CATEGORIES = 'https://fakestoreapi.com/products/categories';
@@ -50,6 +52,10 @@ function Aside({ setCurrentCategory, burgerNavState, burgerStateToggle }) {
             );
           })}
         </ul>
+        <hr />
+        <Link className='header-nav-link' to={'/about'}>
+          About
+        </Link>
       </div>
     </aside>
   );

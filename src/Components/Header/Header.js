@@ -1,9 +1,7 @@
 import React from 'react';
 import './Header.css';
-import HeaderItem from './HeaderItem/HeaderItem/HeaderItem';
-import Cart from '../Cart/Cart';
 import CartLogo from '../../static/CartLogo';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Header({ itemsCount, burgerStateToggle, burgerNavState }) {
   return (
@@ -13,16 +11,20 @@ function Header({ itemsCount, burgerStateToggle, burgerNavState }) {
       </Link>
       <div className='header-wrapper'>
         <div className='header-nav'>
-          <HeaderItem headerItemName={'Main page'} to={'/'} />
-          <HeaderItem headerItemName={'About'} to={'/about'} />|
+          <NavLink className='header-nav-link' to={'/'}>
+            Main page
+          </NavLink>
+          <NavLink className='header-nav-link' to={'/about'}>
+            About
+          </NavLink>{' '}
+          |
         </div>
 
         <div className='header-cartIcon'>
-          <HeaderItem
-            headerItemName={<CartLogo />}
-            modalContent={Cart}
-            to={'/cart'}
-          />
+          <NavLink className='header-nav-link' to={'/cart'}>
+            <CartLogo />
+          </NavLink>
+
           <span id='itemLengthInCart'>{itemsCount}</span>
         </div>
         <div
