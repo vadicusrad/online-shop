@@ -1,10 +1,10 @@
 .Category-list-item {
-  cursor: pointer;
-  margin-top: 15px;
-  transition: 0.2s all;
-  line-height: 35px;
+	cursor: pointer;
+	margin-top: 15px;
+	transition: 0.2s all;
+	line-height: 35px;
 }
 .Category-list-item:hover {
-  color: rgb(255, 255, 255);
-  text-shadow: -1px 0px 9px rgba(255, 255, 255, 1);
+	color: rgb(255, 255, 255);
+	text-shadow: -1px 0px 9px rgba(255, 255, 255, 1);
 }

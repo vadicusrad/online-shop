@@ -32,7 +32,7 @@
 }
 
 .header-burger:after {
-	content: "";
+	content: '';
 	width: 30px;
 	background-color: white;
 	position: absolute;
@@ -42,7 +42,7 @@
 }
 
 .header-burger:before {
-	content: "";
+	content: '';
 	width: 30px;
 	background-color: white;
 	position: absolute;

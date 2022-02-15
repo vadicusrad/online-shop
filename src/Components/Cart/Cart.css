@@ -22,6 +22,7 @@
 .Cart-index {
 	padding: 10px;
 }
+
 .Cart-sum {
 	display: flex;
 	height: 100px;
@@ -34,6 +35,7 @@
 .Cart-sum_btn {
 	padding-left: 30px;
 }
+
 .Cart-sum_btn button {
 	background-color: rgb(60, 214, 40);
 

@@ -1,5 +1,5 @@
-import React from "react";
-import "./CategoriesItem.css";
+import React from 'react';
+import './CategoriesItem.css';
 
 function CategoriesItem({
 	categoryName,
@@ -12,7 +12,7 @@ function CategoriesItem({
 				setCurrentCategory(categoryName);
 				burgerStateToggle();
 			}}
-			className="Category-list-item"
+			className='Category-list-item'
 		>
 			{categoryName}
 		</li>

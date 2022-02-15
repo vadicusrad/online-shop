@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import "./App.css";
-import Content from "./Components/Content/Content";
-import { Routes, Route } from "react-router-dom";
-import Cart from "./Components/Cart/Cart";
-import About from "./Components/About/About";
-import BaseLayout from "./Components/BaseLayout/BaseLayout";
+import React, { useState } from 'react';
+import './App.css';
+import Content from './Components/Content/Content';
+import { Routes, Route } from 'react-router-dom';
+import Cart from './Components/Cart/Cart';
+import About from './Components/About/About';
+import BaseLayout from './Components/BaseLayout/BaseLayout';
 
 function App() {
 	const [cartItems, setCartItems] = useState([]);
@@ -16,10 +16,10 @@ function App() {
 
 	const itemsCount = cartItems.length;
 	return (
-		<div className="App">
+		<div className='App'>
 			<Routes>
 				<Route
-					path={"/"}
+					path={'/'}
 					element={
 						<BaseLayout
 							burgerNavState={burgerNavState}
@@ -40,7 +40,7 @@ function App() {
 						}
 					/>
 					<Route
-						path={"cart"}
+						path={'cart'}
 						element={
 							<Cart
 								setCartItems={setCartItems}
@@ -48,7 +48,7 @@ function App() {
 							/>
 						}
 					/>
-					<Route path={"about"} element={<About />} />
+					<Route path={'about'} element={<About />} />
 				</Route>
 			</Routes>
 		</div>

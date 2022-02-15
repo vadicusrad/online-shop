@@ -1,8 +1,8 @@
-import React from "react";
-import "./Content.css";
-import Aside from "../Aside/Asaide";
-import ContentItems from "../ContentItems/ContentItems";
-import { useState } from "react";
+import React from 'react';
+import './Content.css';
+import Aside from '../Aside/Asaide';
+import ContentItems from '../ContentItems/ContentItems';
+import { useState } from 'react';
 
 function Content({
 	cartItems,
@@ -10,7 +10,7 @@ function Content({
 	burgerNavState,
 	burgerStateToggle,
 }) {
-	const [currentCategory, setCurrentCategory] = useState("");
+	const [currentCategory, setCurrentCategory] = useState('');
 	const [modalActive, setModalActive] = useState(false);
 	const [modalContent, setModalContent] = useState([]);
 
@@ -36,11 +36,11 @@ function Content({
 	)}`;
 
 	if (!currentCategory) {
-		currentCategoryLink = "";
+		currentCategoryLink = '';
 	}
 
 	return (
-		<div className="Content">
+		<div className='Content'>
 			<Aside
 				burgerStateToggle={burgerStateToggle}
 				burgerNavState={burgerNavState}
