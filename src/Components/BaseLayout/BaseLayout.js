@@ -3,7 +3,7 @@ import Footer from '../Footer/Footer';
 import { Outlet } from 'react-router-dom';
 function BaseLayout({ itemsCount, burgerStateToggle, burgerNavState }) {
   return (
-    <div>
+    <>
       <Header
         burgerNavState={burgerNavState}
         burgerStateToggle={burgerStateToggle}
@@ -11,7 +11,7 @@ function BaseLayout({ itemsCount, burgerStateToggle, burgerNavState }) {
       />
       <Outlet />
       <Footer />
-    </div>
+    </>
   );
 }
 

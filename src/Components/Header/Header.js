@@ -1,32 +1,50 @@
 import React from 'react';
-import './Header.css';
-import CartLogo from '../../static/CartLogo';
-import { Link, NavLink } from 'react-router-dom';
+
+import { Link } from 'react-router-dom';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import { IconButton, Container, Typography, Box, Badge } from '@mui/material';
+import { ShoppingBasket } from '@mui/icons-material';
 
 function Header({ itemsCount, burgerStateToggle, burgerNavState }) {
+  const navLinkStyles = {
+    color: 'white',
+    textDecoration: 'none',
+  };
   return (
-    <header className='header'>
-      <Link className='header-brand' to='/'>
-        <h1>My Store</h1>
-      </Link>
-      <div className='header-wrapper'>
-        <div className='header-nav'>
-          <NavLink className='header-nav-link' to={'/'}>
-            Main page
-          </NavLink>
-          <NavLink className='header-nav-link' to={'/about'}>
-            About
-          </NavLink>{' '}
-          |
-        </div>
+    <AppBar position='fixed'>
+      <Container>
+        <Toolbar sx={{ justifyContent: 'space-between' }}>
+          <Typography component='span' variant='h5'>
+            My Store
+          </Typography>
+          <Box display='flex'>
+            <Typography mr='40px' variant='subtitle2'>
+              <Link style={navLinkStyles} to={'/'}>
+                Main page{' '}
+              </Link>
+            </Typography>
+            <Typography mr='40px' variant='subtitle2'>
+              <Link style={navLinkStyles} to={'/about'}>
+                About
+              </Link>
+            </Typography>
 
-        <div className='header-cartIcon'>
-          <NavLink className='header-nav-link' to={'/cart'}>
-            <CartLogo />
-          </NavLink>
+            <Badge
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              color='secondary'
+              badgeContent={itemsCount}
+            >
+              <Link style={{ color: 'white' }} to={'/cart'}>
+                <ShoppingBasket />
+              </Link>
+            </Badge>
+          </Box>
+        </Toolbar>
 
-          <span id='itemLengthInCart'>{itemsCount}</span>
-        </div>
         <div
           onClick={() => {
             burgerStateToggle();
@@ -37,8 +55,8 @@ function Header({ itemsCount, burgerStateToggle, burgerNavState }) {
         >
           <span></span>
         </div>
-      </div>
-    </header>
+      </Container>
+    </AppBar>
   );
 }
 

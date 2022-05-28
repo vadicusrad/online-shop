@@ -1,17 +1,30 @@
 import React from 'react';
-import './Cart.css';
+
 import CartItem from './CartItem/CartItem';
 import { useNavigate } from 'react-router-dom';
+import { Box, Button, ListItem, Stack, Typography } from '@mui/material';
 
 function Cart({ cartItems, setCartItems }) {
   const navigate = useNavigate();
+  const boxStyles = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    height: '70vh',
+    minHeight: '50vh',
+    paddingBottom: '10vh',
+  };
   if (cartItems.length) {
     return (
-      <div className='Cart'>
-        <h2 className='Cart-title'>Shopping cart</h2>
+      <Box style={boxStyles}>
+        <Typography variant='h4' component='h1'>
+          Shopping cart
+        </Typography>
 
-        <div className='Cart-message'>Great choise!</div>
-        <div className='Cart-docket'>
+        <Typography mb='20px' mt='20px' variant='subtitle2'>
+          Great choise!
+        </Typography>
+        <Stack spacing={2} sx={{ width: '100%' }}>
           {cartItems.map((item, index) => {
             return (
               <CartItem
@@ -23,19 +36,27 @@ function Cart({ cartItems, setCartItems }) {
               />
             );
           })}
-          <div className='Cart-sum'>
-            <div className='Cart-sum_price'>
-              <strong>Total:</strong> {getSum(cartItems)}
-            </div>
-            <div className='Cart-sum_btn'>
-              <button>Payment</button>
-            </div>
-          </div>
-        </div>
-        <button className='Cart-backButton' onClick={() => navigate(-1)}>
+          <ListItem
+            sx={{ width: '100p%', justifyContent: 'flex-end' }}
+            alignItems='center'
+          >
+            <Typography sx={{ mr: '30px' }} variant='h5'>
+              Total: {getSum(cartItems)}
+            </Typography>
+
+            <Button color='success' variant='contained'>
+              Payment
+            </Button>
+          </ListItem>
+        </Stack>
+        <Button
+          style={{ marginTop: '50px' }}
+          variant='contained'
+          onClick={() => navigate(-1)}
+        >
           Back
-        </button>
-      </div>
+        </Button>
+      </Box>
     );
   }
 
@@ -49,15 +70,24 @@ function Cart({ cartItems, setCartItems }) {
   }
 
   return (
-    <div className='Cart'>
-      <h2 className='Cart-title'>Shopping cart</h2>
+    <Box style={boxStyles}>
+      <Typography variant='h4' component='h1'>
+        Shopping cart
+      </Typography>
       <div className='Cart-content'>
-        <h3 className='Cart-message'>Your basket is empty</h3>
+        <Typography mb='50px' mt='50px' variant='subtitle2'>
+          Your basket is empty
+        </Typography>
       </div>
-      <button className='Cart-backButton' onClick={() => navigate(-1)}>
+      <Button
+        variant='contained'
+        color='primary'
+        size='medium'
+        onClick={() => navigate(-1)}
+      >
         Back
-      </button>
-    </div>
+      </Button>
+    </Box>
   );
 }
 

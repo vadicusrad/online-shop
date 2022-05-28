@@ -1,5 +1,4 @@
 import React from 'react';
-import './Content.css';
 import Aside from '../Aside/Asaide';
 import ContentItems from '../ContentItems/ContentItems';
 import { useState } from 'react';
@@ -38,12 +37,12 @@ function Content({
   }
 
   return (
-    <div className='Content'>
-      <Aside
+    <>
+      {/* <Aside
         burgerStateToggle={burgerStateToggle}
         burgerNavState={burgerNavState}
         setCurrentCategory={setCurrentCategory}
-      />
+      /> */}
 
       <ContentItems
         setModalContent={setModalContent}
@@ -54,8 +53,9 @@ function Content({
         setCartItems={setCartItems}
         cartItems={cartItems}
         currentCategory={currentCategoryLink}
+        style={{ height: '90vh' }}
       />
-    </div>
+    </>
   );
 }
 

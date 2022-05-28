@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import './ContentItems.css';
 import Card from './Card/Card';
-import LoaderAnimation from '../LoaderAnimation/LoaderAnimation';
 import ModalWindow from '../ModalWindow/ModalWindow';
-
+import { Grid } from '@mui/material';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 function ContentItems({
   currentCategory,
   setCartItems,
@@ -39,30 +39,43 @@ function ContentItems({
   }
 
   if (loading) {
-    return <LoaderAnimation />;
+    return (
+      <Box
+        sx={{
+          height: '80vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <CircularProgress color='secondary' size='100px' />
+      </Box>
+    );
   }
 
   return (
-    <div className='Content-items'>
+    <>
       <ModalWindow
         modalActive={modalActive}
         setModalActive={setModalActive}
         modalContent={modalContent}
       />
-      {items.map((item, index) => {
-        return (
-          <Card
-            setModalContent={setModalContent}
-            setModalActive={setModalActive}
-            modalActive={modalActive}
-            checkSameItems={checkSameItems}
-            setCartItems={setCartItems}
-            cardProps={item}
-            key={index}
-          />
-        );
-      })}
-    </div>
+      <Grid container spacing={{ xs: 2, md: 3 }} mb='200px'>
+        {items.map((item, index) => {
+          return (
+            <Card
+              key={index}
+              setModalContent={setModalContent}
+              setModalActive={setModalActive}
+              modalActive={modalActive}
+              checkSameItems={checkSameItems}
+              setCartItems={setCartItems}
+              cardProps={item}
+            />
+          );
+        })}
+      </Grid>
+    </>
   );
 }
 

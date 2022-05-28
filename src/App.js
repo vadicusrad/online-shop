@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Cart from './Components/Cart/Cart';
 import About from './Components/About/About';
 import BaseLayout from './Components/BaseLayout/BaseLayout';
+import { Container } from '@mui/material';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -16,7 +17,7 @@ function App() {
 
   const itemsCount = cartItems.length;
   return (
-    <div className='App'>
+    <Container sx={{ mt: '80px' }}>
       <Routes>
         <Route
           path={'/'}
@@ -46,7 +47,7 @@ function App() {
           <Route path={'about'} element={<About />} />
         </Route>
       </Routes>
-    </div>
+    </Container>
   );
 }
 

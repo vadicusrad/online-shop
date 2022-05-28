@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Aside.css';
 import CategoriesItem from './CategoriesItem/CategoriesItem';
 import { Link } from 'react-router-dom';
+import { Grid } from '@mui/material';
 
 function Aside({ setCurrentCategory, burgerNavState, burgerStateToggle }) {
   const CATEGORIES = 'https://fakestoreapi.com/products/categories';
@@ -23,40 +24,42 @@ function Aside({ setCurrentCategory, burgerNavState, burgerStateToggle }) {
   }, []);
 
   return (
-    <aside
-      style={burgerNavState ? { left: '0' } : {}}
-      className='Content-filters'
-    >
-      <div className='Content-filters-categories'>
-        <h3>Categories</h3>
-        <ul id='Categories-list'>
-          <li
-            onClick={() => {
-              setCurrentCategory('');
-              burgerStateToggle();
-            }}
-            className='Category-list-item'
-          >
-            all
-          </li>
+    <Grid item>
+      <aside
+        style={burgerNavState ? { left: '0' } : {}}
+        className='Content-filters'
+      >
+        <div className='Content-filters-categories'>
+          <h3>Categories</h3>
+          <ul id='Categories-list'>
+            <li
+              onClick={() => {
+                setCurrentCategory('');
+                burgerStateToggle();
+              }}
+              className='Category-list-item'
+            >
+              all
+            </li>
 
-          {categories.map((item, id) => {
-            return (
-              <CategoriesItem
-                burgerStateToggle={burgerStateToggle}
-                setCurrentCategory={setCurrentCategory}
-                categoryName={item}
-                key={id}
-              />
-            );
-          })}
-        </ul>
-        <hr />
-        <Link className='header-nav-link' to={'/about'}>
-          About
-        </Link>
-      </div>
-    </aside>
+            {categories.map((item, id) => {
+              return (
+                <CategoriesItem
+                  burgerStateToggle={burgerStateToggle}
+                  setCurrentCategory={setCurrentCategory}
+                  categoryName={item}
+                  key={id}
+                />
+              );
+            })}
+          </ul>
+          <hr />
+          <Link className='header-nav-link' to={'/about'}>
+            About
+          </Link>
+        </div>
+      </aside>
+    </Grid>
   );
 }
 

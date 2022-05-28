@@ -1,9 +1,15 @@
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Divider,
+  Grid,
+  ListItem,
+  Typography,
+} from '@mui/material';
 import React from 'react';
-import './CartItem.css';
 
-function CartItem({ item, index, cartItems, setCartItems }) {
-  let cartItemColorClasses = 'Cart-item';
-
+function CartItem({ item, cartItems, setCartItems }) {
   function incrItemCount(item) {
     let newArr = [...cartItems];
     newArr.forEach((arrItem) => {
@@ -29,31 +35,54 @@ function CartItem({ item, index, cartItems, setCartItems }) {
     });
   }
 
-  if (index % 2) {
-    cartItemColorClasses = `${cartItemColorClasses} grey`;
-  }
   return (
-    <div className={cartItemColorClasses}>
-      {/* <div className="Cart-index">{index}</div> */}
-      <div className='Cart-item_title'>
-        <h6>{item.title}</h6>
-      </div>
-      <div className='Cart-item-wrapper'>
-        <div className='Cart-item_img'>
-          <img src={item.image} alt={item.title} />
-        </div>
-        <div className='Cart-item_price'>
+    <>
+      <ListItem
+        sx={{
+          height: '120px',
+          width: '100p%',
+          justifyContent: 'space-between',
+        }}
+        alignItems='center'
+      >
+        <Typography sx={{ width: '200px' }} variant='subtitle2' component='h6'>
+          {item.title}
+        </Typography>
+
+        <Box
+          component='img'
+          sx={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain',
+          }}
+          src={item.image}
+          alt={item.title}
+        />
+
+        <Typography style={{ marginRight: '30px' }} variant='subtitle1'>
           price: <strong>{item.price} </strong> $
-        </div>
-        <div className='Cart-item_btn'>
-          <button onClick={() => incrItemCount(item)}>+</button>
-          <div className='Cart-item_count'>
-            <p>{item.count}</p>
-          </div>
-          <button onClick={() => decrItemCount(item)}>-</button>
-        </div>
-      </div>
-    </div>
+        </Typography>
+
+        <ButtonGroup disableElevation variant='contained'>
+          <Button variant='contained' onClick={() => incrItemCount(item)}>
+            +
+          </Button>
+          <Typography
+            alignSelf='center'
+            ml='20px'
+            mr='20px'
+            variant='subtitle1'
+          >
+            {item.count}
+          </Typography>
+          <Button variant='contained' onClick={() => decrItemCount(item)}>
+            -
+          </Button>
+        </ButtonGroup>
+      </ListItem>
+      <Divider variant='inset' />
+    </>
   );
 }
 
