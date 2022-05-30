@@ -2,7 +2,14 @@ import React from 'react';
 
 import CartItem from './CartItem/CartItem';
 import { useNavigate } from 'react-router-dom';
-import { Box, Button, ListItem, Stack, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  Divider,
+  ListItem,
+  Stack,
+  Typography,
+} from '@mui/material';
 
 function Cart({ cartItems, setCartItems }) {
   const navigate = useNavigate();
@@ -24,7 +31,8 @@ function Cart({ cartItems, setCartItems }) {
         <Typography mb='20px' mt='20px' variant='subtitle2'>
           Great choise!
         </Typography>
-        <Stack spacing={2} sx={{ width: '100%' }}>
+        <Divider sx={{ width: '100%', margin: '0 auto' }} variant='inset' />
+        <Stack spacing={2} sx={{ width: '100%', paddingTop: '20px' }}>
           {cartItems.map((item, index) => {
             return (
               <CartItem
