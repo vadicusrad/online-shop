@@ -11,12 +11,12 @@ function Cart({ cartItems, setCartItems }) {
     flexDirection: 'column',
     alignItems: 'center',
     height: '70vh',
-    minHeight: '50vh',
-    paddingBottom: '10vh',
+    minHeight: '300px',
+    marginBottom: '200px',
   };
   if (cartItems.length) {
     return (
-      <Box style={boxStyles}>
+      <Box mb='300px' style={boxStyles}>
         <Typography variant='h4' component='h1'>
           Shopping cart
         </Typography>
@@ -48,14 +48,19 @@ function Cart({ cartItems, setCartItems }) {
               Payment
             </Button>
           </ListItem>
+          <Button
+            style={{
+              width: '100px',
+              margin: '0 auto',
+              marginBottom: '150px',
+              marginTop: '50px',
+            }}
+            variant='contained'
+            onClick={() => navigate(-1)}
+          >
+            Back
+          </Button>
         </Stack>
-        <Button
-          style={{ marginTop: '50px' }}
-          variant='contained'
-          onClick={() => navigate(-1)}
-        >
-          Back
-        </Button>
       </Box>
     );
   }
