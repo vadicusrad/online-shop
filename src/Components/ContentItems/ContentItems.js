@@ -65,7 +65,12 @@ function ContentItems({
         setModalActive={setModalActive}
         modalContent={modalContent}
       />
-      <Grid container spacing={{ xs: 2, md: 3 }} mb='200px'>
+      <Grid
+        container
+        spacing={{ xs: 2, md: 3 }}
+        mt='130px !important'
+        mb='200px'
+      >
         {items.map((item, index) => {
           return (
             <Card
