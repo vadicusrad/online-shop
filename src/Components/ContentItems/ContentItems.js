@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from './Card/Card';
 import ModalWindow from '../ModalWindow/ModalWindow';
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 function ContentItems({
@@ -46,8 +46,13 @@ function ContentItems({
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
+          flexDirection: 'column',
         }}
       >
+        <Typography mb='30px'>
+          Waiting very slowly response from Fake API server)
+        </Typography>
+
         <CircularProgress color='secondary' size='100px' />
       </Box>
     );
