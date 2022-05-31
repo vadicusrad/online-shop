@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import './Aside.css';
-import CategoriesItem from './CategoriesItem/CategoriesItem';
-import { Link } from 'react-router-dom';
-import { Grid } from '@mui/material';
 
-function Aside({ setCurrentCategory, burgerNavState, burgerStateToggle }) {
+import FormControl from '@mui/material/FormControl';
+import MenuItem from '@mui/material/MenuItem';
+import InputLabel from '@mui/material/InputLabel';
+import Select from '@mui/material/Select';
+
+function Aside({ currentCategory, setCurrentCategory }) {
   const CATEGORIES = 'https://fakestoreapi.com/products/categories';
 
   const [categories, setCategories] = useState([]);
@@ -24,42 +25,27 @@ function Aside({ setCurrentCategory, burgerNavState, burgerStateToggle }) {
   }, []);
 
   return (
-    <Grid item>
-      <aside
-        style={burgerNavState ? { left: '0' } : {}}
-        className='Content-filters'
+    <FormControl variant='filled' sx={{ m: 2, minWidth: 200 }}>
+      <InputLabel id='demo-select-large'>Category</InputLabel>
+      <Select
+        labelId='demo-select-large'
+        id='demo-select-large'
+        value={currentCategory}
+        label='Category'
+        onChange={(e) => {
+          setCurrentCategory(e.target.value);
+        }}
       >
-        <div className='Content-filters-categories'>
-          <h3>Categories</h3>
-          <ul id='Categories-list'>
-            <li
-              onClick={() => {
-                setCurrentCategory('');
-                burgerStateToggle();
-              }}
-              className='Category-list-item'
-            >
-              all
-            </li>
-
-            {categories.map((item, id) => {
-              return (
-                <CategoriesItem
-                  burgerStateToggle={burgerStateToggle}
-                  setCurrentCategory={setCurrentCategory}
-                  categoryName={item}
-                  key={id}
-                />
-              );
-            })}
-          </ul>
-          <hr />
-          <Link className='header-nav-link' to={'/about'}>
-            About
-          </Link>
-        </div>
-      </aside>
-    </Grid>
+        <MenuItem value=''>all</MenuItem>
+        {categories.map((item, id) => {
+          return (
+            <MenuItem value={item} key={id}>
+              {item}
+            </MenuItem>
+          );
+        })}
+      </Select>
+    </FormControl>
   );
 }
 

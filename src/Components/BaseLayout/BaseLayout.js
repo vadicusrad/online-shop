@@ -4,11 +4,7 @@ import { Outlet } from 'react-router-dom';
 function BaseLayout({ itemsCount, burgerStateToggle, burgerNavState }) {
   return (
     <>
-      <Header
-        burgerNavState={burgerNavState}
-        burgerStateToggle={burgerStateToggle}
-        itemsCount={itemsCount}
-      />
+      <Header itemsCount={itemsCount} />
       <Outlet />
       <Footer />
     </>
